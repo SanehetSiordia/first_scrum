@@ -8,6 +8,9 @@ def inicio(request):
 
 def consulta(request):
     return render(request, 'pages/consulta.html')
+
+def registros(request):
+    return render(request, 'registros/index.html')
     
 
 
