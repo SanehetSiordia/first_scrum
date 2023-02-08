@@ -6,4 +6,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 def inicio(request):
     return HttpResponse('<h1>Bienvenido a la pagina de inicio<h1>')
 
+def consulta(request):
+    return render(request, 'pages/consulta.html')
+    
+
 
