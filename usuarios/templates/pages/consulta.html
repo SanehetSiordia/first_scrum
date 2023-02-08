@@ -5,6 +5,48 @@
 
 {% block contenido %}
 
-    seccion de consulta
+<div class="card">
+    <div class="card-header">
+        Listar Usuarios
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Usuarios</h4>
+        
+        <div class="table-responsive">
+            <table class="table table-primary">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Fecha Nacimiento</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Sinhue</td>
+                        <td>Siordia Millan</td>
+                        <td>25/04/1992</td>
+                        <td>30</td>
+                        <td>Culiacan</td>
+                        <td>Sinaloa</td>
+                        <td>6671302628</td>
+                        <td>Editar | Borrar</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+
+    </div>
+    <div class="card-footer text-muted">
+    </div>
+</div>
 
 {% endblock %}
