@@ -6,11 +6,13 @@ from django.http import HttpResponse, HttpResponseRedirect
 def inicio(request):
     return render(request, 'pages/inicio.html')
 
-def consulta(request):
-    return render(request, 'pages/consulta.html')
 
 def registros(request):
     return render(request, 'registros/index.html')
+def crear(request):
+    return render(request, 'registros/crear.html')
+def editar(request):
+    return render(request, 'registros/editar.html')
     
 
 
