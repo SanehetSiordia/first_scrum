@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import usuario
 from .forms import UsuarioForm
@@ -19,7 +19,10 @@ def registros(request):
     return render(request, 'registros/index.html',{'usuarios':registros})
 
 def crear(request):
-    formulario=UsuarioForm(request.POST or None)
+    formulario=UsuarioForm(request.POST or None,request.FILES or None)
+    if formulario.is_valid():
+        formulario.save()
+        return redirect('registros')
     return render(request, 'registros/crear.html',{'formulario':formulario})
     
 def editar(request):
