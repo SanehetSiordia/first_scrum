@@ -42,7 +42,7 @@
                         <td>{{user.ciudad}}</td>
                         <td>{{user.estado}}</td>
                         <td>{{user.numero}}</td>
-                        <td><a name="" id="" class="btn btn-info" href="{% url 'editar' %}" role="button">Editar</a>                     
+                        <td><a name="" id="" class="btn btn-info" href="{% url 'editar' user.id %}" role="button">Editar</a>                     
                             <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' user.id %}" role="button">Borrar</a>
                         </td>
                     </tr>

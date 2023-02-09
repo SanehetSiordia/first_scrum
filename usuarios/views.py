@@ -18,8 +18,13 @@ def crear(request):
         return redirect('registros')
     return render(request, 'registros/crear.html',{'formulario':formulario})
     
-def editar(request):
-    return render(request, 'registros/editar.html')
+def editar(request, id):
+    registro=usuario.objects.get(id=id)
+    formulario=UsuarioForm(request.POST or None,request.FILES or None,instance=registro)
+    if formulario.is_valid() and request.POST:
+        formulario.save()
+        return redirect('registros')
+    return render(request, 'registros/editar.html',{'formulario':formulario})
 
 def eliminar(request, id):
     registro=usuario.objects.get(id=id)
