@@ -7,15 +7,8 @@ from .forms import UsuarioForm
 def inicio(request):
     return render(request, 'pages/inicio.html')
 
-
 def registros(request):
-    registros=usuario.objects.all()    
-    print(type(registros))
-    print(registros)
-    print(registros[0].nombre)
-    print(registros[0].numero)
-    print(registros[0].apellido)
-    print(registros[0].edad)
+    registros=usuario.objects.all()
     return render(request, 'registros/index.html',{'usuarios':registros})
 
 def crear(request):
@@ -27,6 +20,11 @@ def crear(request):
     
 def editar(request):
     return render(request, 'registros/editar.html')
+
+def eliminar(request, id):
+    registro=usuario.objects.get(id=id)
+    registro.delete()
+    return redirect('registros')
     
 
 

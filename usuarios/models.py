@@ -17,7 +17,7 @@ class usuario(models.Model):
         fila=f'Nombre: {self.nombre} {self.primer_apellido} {self.segundo_apellido} | Cumpleaños: {self.fecha}'  
         return fila
 
-    def delete(self, using:None, keep_parents: False):
+    def delete(self):
         return super().delete()
     
     @property
