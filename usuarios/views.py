@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-
+from .models import usuario
+from .forms import UsuarioForm
 # Create your views here.
 
 def inicio(request):
@@ -8,9 +9,19 @@ def inicio(request):
 
 
 def registros(request):
-    return render(request, 'registros/index.html')
+    registros=usuario.objects.all()    
+    print(type(registros))
+    print(registros)
+    print(registros[0].nombre)
+    print(registros[0].numero)
+    print(registros[0].apellido)
+    print(registros[0].edad)
+    return render(request, 'registros/index.html',{'usuarios':registros})
+
 def crear(request):
-    return render(request, 'registros/crear.html')
+    formulario=UsuarioForm(request.POST or None)
+    return render(request, 'registros/crear.html',{'formulario':formulario})
+    
 def editar(request):
     return render(request, 'registros/editar.html')
     

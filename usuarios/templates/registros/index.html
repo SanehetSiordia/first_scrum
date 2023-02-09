@@ -32,20 +32,21 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for user in usuarios %}
                     <tr>
-                        <td>1</td>
-                        <td>Sinhue</td>
-                        <td>Siordia Millan</td>
-                        <td>25/04/1992</td>
-                        <td>30</td>
-                        <td>Culiacan</td>
-                        <td>Sinaloa</td>
-                        <td>6671302628</td>
-                        <td><a name="" id="" class="btn btn-info" href="{% url 'editar' %}" role="button">Editar</a> 
-                    
+                        <td>{{user.id}}</td>
+                        <td>{{user.nombre}}</td>
+                        <td>{{user.apellido}}</td>
+                        <td>{{user.fecha}}</td>
+                        <td>{{user.edad}}</td>
+                        <td>{{user.ciudad}}</td>
+                        <td>{{user.estado}}</td>
+                        <td>{{user.numero}}</td>
+                        <td><a name="" id="" class="btn btn-info" href="{% url 'editar' %}" role="button">Editar</a>                     
                             <a name="" id="" class="btn btn-danger" href="#" role="button">Borrar</a>
                         </td>
                     </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
